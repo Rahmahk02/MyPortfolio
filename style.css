@@ -94,6 +94,72 @@ img {
   color: #58a6ff;
 }
 
-.hero p
+.hero p {
+  margin-bottom: 20px;
+  color: #aaa;
+}
+
+.social-icons a {
+  margin-right: 15px;
+  font-size: 1.4rem;
+  color: #ccc;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ff3c57;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 28px;
+  background: transparent;
+  color: #ff3c57;
+  border: 2px solid #ff3c57;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #ff3c57;
+  color: #fff;
+}
+
+/* Sections */
+section {
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #111;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  color: #58a6ff;
+  margin-bottom: 20px;
+  text-align: center;  /* Keep the text centered */
+  opacity: 0; /* Initially hidden */
+  transform: translateY(30px); /* Starts with a slight offset */
+  animation: fadeInUp 1s forwards; /* Fade-in and slide-up animation */
+}
+
+/* Keyframes for Scroll Animation */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #0a0a0a;
+  color: #666;
+}
 
 
