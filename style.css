@@ -24,9 +24,11 @@ img {
   top: 0;
   width: 100%;
   background: #111;
+  height: 70px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 20px 50px;
+  padding: 0 50px;
   z-index: 1000;
 }
 
@@ -40,13 +42,11 @@ img {
 }
 
 .nav-links {
-  list-style: none;
+  position: absolute;
+  left: 50px;
   display: flex;
   gap: 30px;
-}
-
-.navbar .nav-links {
-  margin-left: 0;
+  list-style: none;
 }
 
 .nav-links li a {
@@ -144,8 +144,10 @@ section {
   opacity: 0;
   transform: translateY(30px);
   animation: fadeInUp 1s forwards;
+  animation-delay: 0.3s;
 }
 
+/* Section Headings */
 h2 {
   color: #58a6ff;
   margin-bottom: 30px;
@@ -169,5 +171,11 @@ footer {
   padding: 20px;
   background: #0a0a0a;
   color: #666;
+}
+
+/* Utility */
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
 }
 
