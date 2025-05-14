@@ -3,7 +3,7 @@ body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background: #0a0a0a;
+  background: #0a0a0a; /* Dark background */
   color: #f1f1f1;
 }
 
@@ -15,7 +15,7 @@ a {
 img {
   max-width: 100%;
   border-radius: 50%;
-  border: 3px solid #ff3c57;
+  border: 3px solid #58a6ff; /* Blue border */
 }
 
 /* Navbar */
@@ -23,7 +23,7 @@ img {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #111;
+  background: #111; /* Dark background for navbar */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,8 +34,8 @@ img {
 .logo {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #ff3c57;
-  text-align: center; /* Center the logo */
+  color: #58a6ff; /* Blue color for logo */
+  text-align: center;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -50,14 +50,14 @@ img {
 }
 
 .nav-links li a {
-  color: #ccc;
+  color: #ccc; /* Light gray for nav links */
   font-weight: 500;
   transition: 0.3s;
 }
 
 .nav-links li a:hover {
-  color: #ff3c57;
-  border-bottom: 2px solid #ff3c57;
+  color: #58a6ff; /* Blue hover effect */
+  border-bottom: 2px solid #58a6ff;
 }
 
 /* Hero Section */
@@ -93,16 +93,16 @@ img {
 }
 
 .highlight {
-  color: #ff3c57;
+  color: #58a6ff; /* Blue for highlighted text */
 }
 
 .highlight-alt {
-  color: #58a6ff;
+  color: #ffffff; /* White for alternate highlighted text */
 }
 
 .hero p {
   margin-bottom: 20px;
-  color: #aaa;
+  color: #aaa; /* Light gray for paragraph */
 }
 
 .social-icons a {
@@ -113,40 +113,41 @@ img {
 }
 
 .social-icons a:hover {
-  color: #ff3c57;
+  color: #58a6ff; /* Blue hover effect for social icons */
 }
 
 .btn {
   display: inline-block;
   margin-top: 20px;
   padding: 12px 28px;
-  background: transparent;
-  color: #ff3c57;
-  border: 2px solid #ff3c57;
+  background: #58a6ff; /* Blue background */
+  color: #fff;
+  border: 2px solid #58a6ff; /* Blue border */
   border-radius: 30px;
   font-weight: 600;
   transition: 0.3s;
 }
 
 .btn:hover {
-  background: #ff3c57;
-  color: #fff;
+  background: transparent;
+  color: #58a6ff; /* Blue text on hover */
+  border: 2px solid #58a6ff;
 }
 
 /* Sections */
 section {
-  padding: 60px 20px;
+  padding: 80px 20px;
   max-width: 800px;
   margin: 0 auto;
-  background: #111;
+  background: #111; /* Dark background */
   border-radius: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 
 h2 {
-  color: #58a6ff;
-  margin-bottom: 20px;
-  text-align: center;  /* Center the section headers */
+  color: #58a6ff; /* Blue for section headers */
+  margin-bottom: 30px;
+  text-align: center;
   opacity: 0; /* Initially hidden */
   transform: translateY(30px); /* Starts with a slight offset */
   animation: fadeInUp 1s forwards; /* Fade-in and slide-up animation */
@@ -164,9 +165,8 @@ h2 {
 footer {
   text-align: center;
   padding: 20px;
-  background: #0a0a0a;
+  background: #0a0a0a; /* Dark footer background */
   color: #666;
 }
-
 
 
