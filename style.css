@@ -3,7 +3,7 @@ body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background: #0a0a0a; /* Dark background */
+  background: #0a0a0a;
   color: #f1f1f1;
 }
 
@@ -15,7 +15,7 @@ a {
 img {
   max-width: 100%;
   border-radius: 50%;
-  border: 3px solid #58a6ff; /* Blue border */
+  border: 3px solid #58a6ff;
 }
 
 /* Navbar */
@@ -23,40 +23,40 @@ img {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #111; /* Dark background for navbar */
+  background: #111;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
   z-index: 1000;
 }
 
 .logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 1.5rem;
   font-weight: 600;
-  color: #58a6ff; /* Blue color for logo */
-  text-align: center;
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  color: #58a6ff;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
   gap: 30px;
-  margin-left: auto;
-  margin-right: auto;
+}
+
+.navbar .nav-links {
+  margin-left: 0;
 }
 
 .nav-links li a {
-  color: #ccc; /* Light gray for nav links */
+  color: #ccc;
   font-weight: 500;
   transition: 0.3s;
 }
 
 .nav-links li a:hover {
-  color: #58a6ff; /* Blue hover effect */
+  color: #58a6ff;
   border-bottom: 2px solid #58a6ff;
 }
 
@@ -93,16 +93,16 @@ img {
 }
 
 .highlight {
-  color: #58a6ff; /* Blue for highlighted text */
+  color: #58a6ff;
 }
 
 .highlight-alt {
-  color: #ffffff; /* White for alternate highlighted text */
+  color: #ffffff;
 }
 
 .hero p {
   margin-bottom: 20px;
-  color: #aaa; /* Light gray for paragraph */
+  color: #aaa;
 }
 
 .social-icons a {
@@ -113,16 +113,16 @@ img {
 }
 
 .social-icons a:hover {
-  color: #58a6ff; /* Blue hover effect for social icons */
+  color: #58a6ff;
 }
 
 .btn {
   display: inline-block;
   margin-top: 20px;
   padding: 12px 28px;
-  background: #58a6ff; /* Blue background */
+  background: #58a6ff;
   color: #fff;
-  border: 2px solid #58a6ff; /* Blue border */
+  border: 2px solid #58a6ff;
   border-radius: 30px;
   font-weight: 600;
   transition: 0.3s;
@@ -130,7 +130,7 @@ img {
 
 .btn:hover {
   background: transparent;
-  color: #58a6ff; /* Blue text on hover */
+  color: #58a6ff;
   border: 2px solid #58a6ff;
 }
 
@@ -138,19 +138,21 @@ img {
 section {
   padding: 80px 20px;
   max-width: 800px;
-  margin: 0 auto;
-  background: #111; /* Dark background */
+  margin: 0 auto 60px;
+  background: #111;
   border-radius: 10px;
-  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s forwards;
 }
 
 h2 {
-  color: #58a6ff; /* Blue for section headers */
+  color: #58a6ff;
   margin-bottom: 30px;
   text-align: center;
-  opacity: 0; /* Initially hidden */
-  transform: translateY(30px); /* Starts with a slight offset */
-  animation: fadeInUp 1s forwards; /* Fade-in and slide-up animation */
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s forwards;
 }
 
 /* Keyframes for Scroll Animation */
@@ -165,8 +167,7 @@ h2 {
 footer {
   text-align: center;
   padding: 20px;
-  background: #0a0a0a; /* Dark footer background */
+  background: #0a0a0a;
   color: #666;
 }
-
 
