@@ -35,12 +35,18 @@ img {
   font-size: 1.5rem;
   font-weight: 600;
   color: #ff3c57;
+  text-align: center; /* Center the logo */
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
   gap: 30px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .nav-links li a {
@@ -140,7 +146,7 @@ section {
 h2 {
   color: #58a6ff;
   margin-bottom: 20px;
-  text-align: center;  /* Keep the text centered */
+  text-align: center;  /* Center the section headers */
   opacity: 0; /* Initially hidden */
   transform: translateY(30px); /* Starts with a slight offset */
   animation: fadeInUp 1s forwards; /* Fade-in and slide-up animation */
@@ -161,5 +167,6 @@ footer {
   background: #0a0a0a;
   color: #666;
 }
+
 
 
