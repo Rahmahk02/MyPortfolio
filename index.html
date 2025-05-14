@@ -5,32 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rahmah's Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">Rahmah</div>
+    <ul class="nav-links">
+      <li><a href="#intro">Intro</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero/Header -->
+  <header class="hero" data-animate>
     <h1>Rahmah</h1>
     <p>Student at Penn State World Campus</p>
   </header>
 
-  <section class="intro">
-    <p> Cyber Security Student </p>
+  <!-- Intro -->
+  <section id="intro" class="intro" data-animate>
+    <p>💻 Cyber Security Student </p>
   </section>
 
-  <section class="projects">
+  <!-- Projects -->
+  <section id="projects" class="projects" data-animate>
     <h2>My Projects</h2>
     <ul>
-      <li>Project A: </li>
-      <li>Project B: </li>
+      <li>🔐 Project A: Description coming soon...</li>
+      <li>🛡️ Project B: Description coming soon...</li>
     </ul>
   </section>
 
-  <section class="contact">
+  <!-- Contact -->
+  <section id="contact" class="contact" data-animate>
     <h2>Contact Me</h2>
-    <p>Email: rmkhalil21@gmail.com</p>
+    <p>Email: <a href="mailto:rmkhalil21@gmail.com">rmkhalil21@gmail.com</a></p>
   </section>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Rahmah</p>
   </footer>
+
+  <!-- Animation Script -->
+  <script>
+    const animatedElements = document.querySelectorAll('[data-animate]');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animated');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    animatedElements.forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
