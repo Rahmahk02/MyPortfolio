@@ -6,41 +6,51 @@
   <title>Rahmah's Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Navbar -->
   <nav class="navbar">
     <div class="logo">Rahmah</div>
     <ul class="nav-links">
-      <li><a href="#intro">Intro</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Skills</a></li>
+      <li><a href="#">Education</a></li>
+      <li><a href="#">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- Hero/Header -->
-  <header class="hero" data-animate>
-    <h1>Rahmah</h1>
-    <p>Student at Penn State World Campus</p>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-left">
+      <img src="your-image.jpg" alt="Rahmah profile picture" />
+    </div>
+    <div class="hero-right">
+      <h1>Hi, I'm <span class="highlight">Rahmah</span></h1>
+      <h2>a <span class="highlight-alt">Cybersecurity</span> Student</h2>
+      <p>Student at Penn State World Campus with a passion for ethical hacking, privacy, and all things tech.</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fas fa-envelope"></i></a>
+      </div>
+      <a href="#contact" class="btn">Hire Me</a>
+    </div>
   </header>
 
-  <!-- Intro -->
-  <section id="intro" class="intro" data-animate>
-    <p>💻 Cyber Security Student </p>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="projects" data-animate>
-    <h2>My Projects</h2>
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
     <ul>
-      <li>🔐 Project A: Description coming soon...</li>
-      <li>🛡️ Project B: Description coming soon...</li>
+      <li>Project A: Something cool</li>
+      <li>Project B: Another cool thing</li>
     </ul>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="contact" data-animate>
+  <!-- Contact Section -->
+  <section id="contact">
     <h2>Contact Me</h2>
     <p>Email: <a href="mailto:rmkhalil21@gmail.com">rmkhalil21@gmail.com</a></p>
   </section>
@@ -50,19 +60,5 @@
     <p>&copy; 2025 Rahmah</p>
   </footer>
 
-  <!-- Animation Script -->
-  <script>
-    const animatedElements = document.querySelectorAll('[data-animate]');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animated');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    animatedElements.forEach(el => observer.observe(el));
-  </script>
 </body>
 </html>
