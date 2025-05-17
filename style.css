@@ -116,6 +116,30 @@ img {
   color: #58a6ff;
 }
 
+/* Profile Buttons */
+.profile-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.profile-btn {
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px solid #58a6ff;
+  color: #58a6ff;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.profile-btn:hover {
+  background-color: #58a6ff;
+  color: #fff;
+}
+
+/* Contact Button */
 .btn {
   display: inline-block;
   margin-top: 20px;
