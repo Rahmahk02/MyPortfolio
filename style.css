@@ -1,10 +1,36 @@
-/* Base Styles */
+:root {
+  --primary: #C874A7;
+  --bg-color: #0a0a0a;
+  --text-color: #f1f1f1;
+  --nav-bg: #111;
+  --nav-text: #ccc;
+  --btn-bg: var(--primary);
+  --btn-text: #fff;
+  --section-bg: #111;
+  --footer-bg: #0a0a0a;
+  --footer-text: #666;
+}
+
+/* Light mode overrides */
+body.light-mode {
+  --bg-color: #f5f5f5;
+  --text-color: #222;
+  --nav-bg: #fff;
+  --nav-text: #444;
+  --btn-bg: var(--primary);
+  --btn-text: #fff;
+  --section-bg: #fff;
+  --footer-bg: #f5f5f5;
+  --footer-text: #999;
+}
+
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
-  background: #0a0a0a;
-  color: #f1f1f1;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -12,193 +38,248 @@ a {
   color: inherit;
 }
 
-img {
-  max-width: 100%;
-  border-radius: 50%;
-  border: 3px solid #58a6ff;
-}
-
-/* Navbar */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #111;
+  background: var(--nav-bg);
   height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 50px;
   z-index: 1000;
+  transition: background-color 0.3s ease;
 }
 
 .logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   font-size: 1.5rem;
   font-weight: 600;
-  color: #58a6ff;
+  color: var(--primary);
+  margin-right: 40px;
+  line-height: 70px; /* vertically center */
 }
 
 .nav-links {
-  position: absolute;
-  left: 50px;
   display: flex;
   gap: 30px;
   list-style: none;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links li a {
-  color: #ccc;
+  color: var(--nav-text);
   font-weight: 500;
-  transition: 0.3s;
+  transition: color 0.3s;
+  line-height: 70px; /* vertically center */
 }
 
 .nav-links li a:hover {
-  color: #58a6ff;
-  border-bottom: 2px solid #58a6ff;
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
 }
 
-/* Hero Section */
+#theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  color: var(--nav-text);
+  margin-left: 20px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: color 0.3s ease;
+  align-self: center; /* vertical center */
+  line-height: 70px;
+}
+
 .hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding-top: 120px;
   padding-bottom: 60px;
-  gap: 60px;
-  flex-wrap: wrap;
-  background: #0a0a0a;
-}
-
-.hero-left img {
-  width: 280px;
-  height: 280px;
-  object-fit: cover;
-}
-
-.hero-right {
-  max-width: 500px;
+  background: var(--bg-color);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .hero h1 {
   font-size: 2.5rem;
   margin-bottom: 10px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-.hero h2 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+.hero h1.fade-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .highlight {
-  color: #58a6ff;
+  color: var(--primary);
 }
 
-.highlight-alt {
-  color: #ffffff;
+.student-title {
+  font-size: 1.4rem;
+  color: var(--text-color);
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .hero p {
   margin-bottom: 20px;
   color: #aaa;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Bubble Icon Buttons */
 .profile-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
   margin-bottom: 20px;
 }
 
 .profile-btn {
-  display: inline-block;
   width: 48px;
   height: 48px;
   border-radius: 50%;
   overflow: hidden;
-  border: 2px solid #58a6ff;
-  margin-right: 15px;
+  border: 2px solid var(--primary);
   transition: background-color 0.3s, border-color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile-btn img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  display: block;
+  object-fit: contain;
   filter: grayscale(100%);
   transition: filter 0.3s;
 }
 
 .profile-btn:hover {
-  background-color: #58a6ff;
-  border-color: #58a6ff;
+  background-color: var(--primary);
+  border-color: var(--primary);
 }
 
 .profile-btn:hover img {
   filter: grayscale(0%);
 }
 
-/* Button */
 .btn {
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 12px 28px;
-  background: #58a6ff;
-  color: #fff;
-  border: 2px solid #58a6ff;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border: 2px solid var(--btn-bg);
   border-radius: 30px;
   font-weight: 600;
   transition: 0.3s;
+  cursor: pointer;
+  text-align: center;
 }
 
 .btn:hover {
   background: transparent;
-  color: #58a6ff;
-  border: 2px solid #58a6ff;
+  color: var(--btn-bg);
+  border: 2px solid var(--btn-bg);
 }
 
-/* Sections */
 section {
   padding: 80px 20px;
   max-width: 800px;
-  margin: 0 auto 60px;
-  background: #111;
+  margin: 80px auto 60px;
+  background: var(--section-bg);
   border-radius: 10px;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 1s forwards;
-  animation-delay: 0.3s;
+  transition: background-color 0.3s ease;
 }
 
-/* Section Headings */
 h2 {
-  color: #58a6ff;
-  margin-bottom: 30px;
+  color: var(--primary);
+  margin-top: 40px;
+  margin-bottom: 50px;
   text-align: center;
+}
+
+.fade-section {
   opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 1s forwards;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+  will-change: opacity, transform;
 }
 
-/* Keyframes for Scroll Animation */
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
-/* Footer */
 footer {
   text-align: center;
   padding: 20px;
-  background: #0a0a0a;
-  color: #666;
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Utility */
 ul {
   list-style-type: disc;
   padding-left: 20px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/* Remove bullet points for skills section */
+.no-bullets {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+/* Separate block text style */
+.block-text {
+  margin-bottom: 40px;
+}
+
+/* Bold text before colon in lists or paragraphs */
+ul li strong,
+.block-text p strong {
+  font-weight: 600;
+}
+
+/* Bold degrees in education list */
+section#education ul li strong {
+  font-weight: 600;
+}
+
+/* Relevant Coursework block with bold title only */
+.block-text p:first-child {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .navbar {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px 20px;
+  }
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+  #theme-toggle {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  .hero {
+    padding-top: 140px;
+  }
 }
