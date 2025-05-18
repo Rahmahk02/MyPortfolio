@@ -144,27 +144,33 @@ a {
   display: flex;
   justify-content: center;
   gap: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
+/* Updated profile button for consistent circle and bigger icons */
 .profile-btn {
   width: 48px;
   height: 48px;
+  padding: 3.2px; /* smaller padding to fit bigger icon */
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid var(--primary);
   transition: background-color 0.3s, border-color 0.3s;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
+  background-color: transparent;
+  cursor: pointer;
+  box-sizing: border-box;
 }
 
-.profile-btn img {
-  width: 24px;
-  height: 24px;
+.profile-btn svg {
+  width: 120%;
+  height: 120%;
+  transform: scale(1.2);
+  fill: var(--primary);
+  transition: fill 0.3s ease;
   object-fit: contain;
-  filter: grayscale(100%);
-  transition: filter 0.3s;
 }
 
 .profile-btn:hover {
@@ -172,8 +178,8 @@ a {
   border-color: var(--primary);
 }
 
-.profile-btn:hover img {
-  filter: grayscale(0%);
+.profile-btn:hover svg {
+  fill: #fff;
 }
 
 .btn {
