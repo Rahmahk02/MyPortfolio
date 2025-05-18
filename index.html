@@ -5,12 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>My Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <nav class="navbar">
@@ -22,7 +17,7 @@
       <li><a href="#experience">Experience</a></li>
       <li><a href="#education">Education</a></li>
     </ul>
-    <button id="theme-toggle" aria-label="Toggle Light/Dark Mode">🌗</button>
+    <button id="theme-toggle" aria-label="Toggle Light/Dark Mode">🌙</button>
   </nav>
 
   <header class="hero">
@@ -60,7 +55,7 @@
         </a>
       </div>
       <a href="mailto:rmkhalil21@gmail.com" class="btn">Contact Me</a>
-      <a href="files/Rahmah_Resume.pdf" download class="btn" style="margin-left: 10px;">Download Resume</a>
+      <a href="/files/Rahmah_Resume.pdf" download class="btn" style="margin-left: 10px;">Download Resume</a>
     </div>
   </header>
 
@@ -157,19 +152,19 @@
     const savedTheme = localStorage.getItem('theme') || 'dark';
     if (savedTheme === 'light') {
       body.classList.add('light-mode');
-      toggleBtn.textContent = '🌗';
+      toggleBtn.textContent = '🌞';  // sun icon for light mode
     } else {
-      toggleBtn.textContent = '🌗';
+      toggleBtn.textContent = '🌙';  // moon icon for dark mode
     }
 
     toggleBtn.addEventListener('click', () => {
       if (body.classList.contains('light-mode')) {
         body.classList.remove('light-mode');
-        toggleBtn.textContent = '🌗';
+        toggleBtn.textContent = '🌙';
         localStorage.setItem('theme', 'dark');
       } else {
         body.classList.add('light-mode');
-        toggleBtn.textContent = '🌗';
+        toggleBtn.textContent = '🌞';
         localStorage.setItem('theme', 'light');
       }
     });
