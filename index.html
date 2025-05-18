@@ -1,16 +1,12 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-  <!-- Navbar -->
   <nav class="navbar">
     <div class="logo">My Portfolio</div>
     <ul class="nav-links">
@@ -19,21 +15,18 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#education">Education</a></li>
-      <li><a href="#contact">Contact</a></li>
     </ul>
+    <button id="theme-toggle" aria-label="Toggle Light/Dark Mode">🌙</button>
   </nav>
 
-  <!-- Hero Section -->
   <header class="hero">
-    <div class="hero-left">
-      <img src="your-image.jpg" alt="Profile picture" />
-    </div>
-    <div class="hero-right">
-      <h1>Hi, I'm <span class="highlight">Rahmah</span></h1>
-      <h2>a <span class="highlight-alt">Cybersecurity</span> Student</h2>
-      <p>Student at Penn State World Campus with a passion for ethical hacking, privacy, and all things tech.</p>
-
-      <!-- Bubble Icon Buttons -->
+    <div class="hero-left"></div>
+    <div class="hero-right fade-section">
+      <h1 id="main-heading">Hi, I'm <span class="highlight">Rahmah</span></h1>
+      <h2 class="student-title">Cybersecurity Student</h2>
+      <p>
+        Student at Penn State World Campus with a passion for ethical hacking, privacy, and all things tech.
+      </p>
       <div class="profile-buttons">
         <a href="https://github.com/Rahmahk02" target="_blank" class="profile-btn" aria-label="GitHub">
           <img src="https://images.icon-icons.com/3685/PNG/512/github_logo_icon_229278.png" alt="GitHub" />
@@ -42,67 +35,127 @@
           <img src="https://cdn-icons-png.flaticon.com/512/5968/5968906.png" alt="Medium" />
         </a>
         <a href="https://www.linkedin.com/in/rahmah-khalil-b02a25215/" target="_blank" class="profile-btn" aria-label="LinkedIn">
-          <img src="https://static-00.iconduck.com/assets.00/linkedin-with-circle-icon-2048x2048-np6yltn1.png" alt="LinkedIn" />
+          <img src="https://i.pinimg.com/564x/6b/ab/30/6bab3017350ca04c6fa05569672bd31e.jpg" alt="LinkedIn" />
         </a>
       </div>
-
-      <!-- Contact Me Button -->
       <a href="mailto:rmkhalil21@gmail.com" class="btn">Contact Me</a>
+      <a href="RahmahKhalil_Resume.pdf" download class="btn" style="margin-left: 10px;">Download Resume</a>
     </div>
   </header>
 
-  <!-- Projects Section -->
-  <section id="projects">
+  <section id="projects" class="fade-section">
     <h2>Projects</h2>
-    <ul>
-      <li>Phishing Email Detection + Rewriter</li>
-      <li>Malware Analysis Assistant</li>
-    </ul>
+    <div class="block-text">
+      <p><strong>SIEM Setup with Azure (2025):</strong></p>
+      <ul>
+        <li>Used an RDP port as a decoy to monitor unauthorized access attempts following a SIEM deploy on Azure.</li>
+        <li>Integrated Microsoft Sentinel on a VM with a non-personal IP address to log successful logins.</li>
+        <li>Used SQL queries to analyze logins.</li>
+        <li>Created a custom 'Security Incident' alert to flag suspicious activities in real-time.</li>
+      </ul>
+    </div>
+    <div class="block-text">
+      <p><strong>Honey Pot Installation (2024):</strong></p>
+      <ul>
+        <li>Deployed and configured a Cowrie honeypot to capture and log unauthorized access attempts, including brute-force attacks and shell interactions.</li>
+        <li>Set up a honeypot to monitor and log SSH and Telnet traffic, providing valuable insights into attack patterns and enhancing network security.</li>
+      </ul>
+    </div>
   </section>
 
-  <!-- Skills Section -->
-  <section id="skills">
+  <section id="skills" class="fade-section">
     <h2>Skills</h2>
-    <ul>
-      <li>Cybersecurity: Ethical Hacking, Network Security, Penetration Testing</li>
-      <li>Programming: Python, C, JavaScript</li>
-      <li>Tools: Kali Linux, Wireshark, Burp Suite</li>
-      <li>Web Development: HTML, CSS, JavaScript, React</li>
+    <ul class="no-bullets">
+      <li><strong>Certifications:</strong> Mastercard Cybersecurity Simulation, Qualys Vulnerability Management (in progress)</li>
+      <li><strong>Technical Skills:</strong> Microsoft Office Suite, Linux, Python, Honeypots, Java, SQL, SIEM, Virtual Machine, PHP, HTML, CSS</li>
+      <li><strong>Soft Skills:</strong> Teamwork, Communication, Problem-Solving, Technical Writing, Public Speaking</li>
+      <li><strong>Languages:</strong> English (Native), Arabic (Elementary)</li>
     </ul>
   </section>
 
-  <!-- Experience Section -->
-  <section id="experience">
+  <section id="experience" class="fade-section">
     <h2>Experience</h2>
-    <ul>
-      <li>Intern, XYZ Cybersecurity Company (2024-Present)</li>
-      <li>Freelance Web Developer (2023-Present)</li>
-      <li>IT Support Technician, ABC Tech (2022-2023)</li>
-    </ul>
+    <div class="block-text">
+      <p><strong>Mastercard Cybersecurity virtual experience program on Forage (2025-2025)</strong></p>
+      <ul>
+        <li>Completed a job simulation as an analyst on Mastercard’s Security Awareness Team.</li>
+        <li>Helped identify and report security threats such as phishing.</li>
+        <li>Analyzed and identified which areas of the business needed more robust security training and implemented training courses and procedures for those teams.</li>
+      </ul>
+    </div>
+    <div class="block-text">
+      <p><strong>Fundraiser Host/Emcee Speaker (2021-Present)</strong></p>
+      <p>While volunteering at a private school, I helped set up event venues and served food during events. I also organized several fundraisers, including being an MC and hosting as a speaker.</p>
+    </div>
   </section>
 
-  <!-- Education Section -->
-  <section id="education">
+  <section id="education" class="fade-section">
     <h2>Education</h2>
+    <div class="block-text">
+      <p><strong>Relevant Coursework:</strong></p>
+      <p>Intro App Development, Intermediate App Development, Computer Literacy, Organization of Data, Cyber-Defense Studio, Information Security, Cyber Forensics, Network and Telecom</p>
+    </div>
     <ul>
-      <li>B.S. in Cybersecurity, Penn State World Campus (2023-Present)</li>
-      <li>High School Diploma, XYZ High School (2021)</li>
+      <li><strong>B.S.</strong> in Cybersecurity, Penn State World Campus (2023-Present)</li>
+      <li><strong>General Studies Transfer</strong>, Harrisburg Area Community College (2021-2023)</li>
+      <li><strong>High School Diploma</strong>, Commonwealth Charter Academy (2021)</li>
     </ul>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:rmkhalil21@gmail.com">rmkhalil21@gmail.com</a></p>
-  </section>
-
-  <!-- Footer -->
   <footer>
     <p>&copy; 2025 My Portfolio</p>
   </footer>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('.fade-section');
+      const heroHeading = document.getElementById('main-heading');
+
+      function fadeOnScroll() {
+        const vh = window.innerHeight;
+        sections.forEach(sec => {
+          const rect = sec.getBoundingClientRect();
+          if (rect.top < vh * 0.8) {
+            sec.classList.add('fade-in');
+          }
+        });
+        const heroRect = heroHeading.getBoundingClientRect();
+        if (heroRect.top < vh * 0.9) {
+          heroHeading.classList.add('fade-in');
+        }
+      }
+
+      window.addEventListener('scroll', fadeOnScroll);
+      fadeOnScroll();
+    });
+
+    const toggleBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Load saved theme or default dark
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    if (savedTheme === 'light') {
+      body.classList.add('light-mode');
+      toggleBtn.textContent = '☀️';
+    } else {
+      toggleBtn.textContent = '🌙';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      if (body.classList.contains('light-mode')) {
+        body.classList.remove('light-mode');
+        toggleBtn.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        body.classList.add('light-mode');
+        toggleBtn.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
 </body>
 </html>
+
 
 
 
