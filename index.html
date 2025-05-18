@@ -17,7 +17,7 @@
       <li><a href="#experience">Experience</a></li>
       <li><a href="#education">Education</a></li>
     </ul>
-    <button id="theme-toggle" aria-label="Toggle Light/Dark Mode">🌙</button>
+    <button id="theme-toggle" aria-label="Toggle Light/Dark Mode">🌗</button>
   </nav>
 
   <header class="hero">
@@ -67,7 +67,7 @@
         <li>Used an RDP port as a decoy to monitor unauthorized access attempts following a SIEM deploy on Azure.</li>
         <li>Integrated Microsoft Sentinel on a VM with a non-personal IP address to log successful logins.</li>
         <li>Used SQL queries to analyze logins.</li>
-        <li>Created a custom 'Security Incident' alert to flag suspicious activities in real-time.</li>
+        <li>Created a custom "Security Incident" alert to flag suspicious activities in real-time.</li>
       </ul>
     </div>
     <div class="block-text">
@@ -84,90 +84,71 @@
     <ul class="no-bullets">
       <li><strong>Certifications:</strong> Mastercard Cybersecurity Simulation, Qualys Vulnerability Management (in progress)</li>
       <li><strong>Technical Skills:</strong> Microsoft Office Suite, Linux, Python, Honeypots, Java, SQL, SIEM, Virtual Machine, PHP, HTML, CSS</li>
-      <li><strong>Soft Skills:</strong> Teamwork, Communication, Problem-Solving, Technical Writing, Public Speaking</li>
-      <li><strong>Languages:</strong> English (Native), Arabic (Elementary)</li>
+      <li><strong>Soft Skills:</strong> Teamwork, Communication, Problem Solving</li>
     </ul>
   </section>
 
   <section id="experience" class="fade-section">
     <h2>Experience</h2>
     <div class="block-text">
-      <p><strong>Mastercard Cybersecurity virtual experience program on Forage (2025-2025)</strong></p>
+      <p><strong>Cybersecurity Intern, Tech Solutions Inc. (Summer 2024):</strong></p>
       <ul>
-        <li>Completed a job simulation as an analyst on Mastercard’s Security Awareness Team.</li>
-        <li>Helped identify and report security threats such as phishing.</li>
-        <li>Analyzed and identified which areas of the business needed more robust security training and implemented training courses and procedures for those teams.</li>
+        <li>Assisted in monitoring network security logs and identifying vulnerabilities.</li>
+        <li>Collaborated with senior engineers to deploy security patches and updates.</li>
       </ul>
-    </div>
-    <div class="block-text">
-      <p><strong>Fundraiser Host/Emcee Speaker (2021-Present)</strong></p>
-      <p>While volunteering at a private school, I helped set up event venues and served food during events. I also organized several fundraisers, including being an MC and hosting as a speaker.</p>
     </div>
   </section>
 
   <section id="education" class="fade-section">
     <h2>Education</h2>
     <div class="block-text">
-      <p><strong>Relevant Coursework:</strong></p>
-      <p>Intro App Development, Intermediate App Development, Computer Literacy, Organization of Data, Cyber-Defense Studio, Information Security, Cyber Forensics, Network and Telecom</p>
+      <p><strong>Penn State World Campus (2023-Present):</strong></p>
+      <ul>
+        <li>B.S. in Cybersecurity, expected 2026</li>
+      </ul>
     </div>
-    <ul>
-      <li><strong>B.S.</strong> in Cybersecurity, Penn State World Campus (2023-Present)</li>
-      <li><strong>General Studies Transfer</strong>, Harrisburg Area Community College (2021-2023)</li>
-      <li><strong>High School Diploma</strong>, Commonwealth Charter Academy (2021)</li>
-    </ul>
   </section>
 
-  <footer>
-    <p>&copy; 2025 My Portfolio</p>
-  </footer>
-
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const sections = document.querySelectorAll('.fade-section');
-      const heroHeading = document.getElementById('main-heading');
-
-      function fadeOnScroll() {
-        const vh = window.innerHeight;
-        sections.forEach(sec => {
-          const rect = sec.getBoundingClientRect();
-          if (rect.top < vh * 0.8) {
-            sec.classList.add('fade-in');
-          }
-        });
-        const heroRect = heroHeading.getBoundingClientRect();
-        if (heroRect.top < vh * 0.9) {
-          heroHeading.classList.add('fade-in');
-        }
-      }
-
-      window.addEventListener('scroll', fadeOnScroll);
-      fadeOnScroll();
-    });
-
+    // Theme toggle button
     const toggleBtn = document.getElementById('theme-toggle');
     const body = document.body;
 
-    // Load saved theme or default dark
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    if (savedTheme === 'light') {
-      body.classList.add('light-mode');
-      toggleBtn.textContent = '🌞';  // sun icon for light mode
+    // On page load, check localStorage for theme
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark');
+      toggleBtn.textContent = '☀️'; // Sun for dark mode active
     } else {
-      toggleBtn.textContent = '🌙';  // moon icon for dark mode
+      toggleBtn.textContent = '🌗'; // Moon for light mode active
     }
 
     toggleBtn.addEventListener('click', () => {
-      if (body.classList.contains('light-mode')) {
-        body.classList.remove('light-mode');
-        toggleBtn.textContent = '🌙';
-        localStorage.setItem('theme', 'dark');
-      } else {
-        body.classList.add('light-mode');
-        toggleBtn.textContent = '🌞';
+      if (body.classList.contains('dark')) {
+        body.classList.remove('dark');
         localStorage.setItem('theme', 'light');
+        toggleBtn.textContent = '🌗'; // Moon icon
+      } else {
+        body.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        toggleBtn.textContent = '☀️'; // Sun icon
       }
+    });
+
+    // Simple fade-in on scroll
+    const fadeElements = document.querySelectorAll('.fade-section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    fadeElements.forEach(el => {
+      observer.observe(el);
     });
   </script>
 </body>
 </html>
+
